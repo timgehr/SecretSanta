@@ -46,11 +46,6 @@ export default Vue.extend({
     encryptThatJawn() {
       this.res = CryptoJS.AES.encrypt(this.input.name, this.input.pass).toString()
     },
-    morePeople() {
-      var newElement = document.createElement('div');
-      newElement.innerHTML = '<div>Hello World!</div>';
-      elm.appendChild(newElement);​​​​​​​​​​​​​​​​
-    }
   }
 });
 </script>

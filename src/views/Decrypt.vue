@@ -1,11 +1,12 @@
 <template>
   <div class="decrypt">
     <div id="topbar">
+      Your Secret Santa Assignment is...
     </div>
     <input
       id="encryptedText"
       type="text"
-      placeholder="Encrypted Text"
+      placeholder="Encrypted Name"
       class="textField1"
       v-model="input.encrName"
       autocapitalize="none"
@@ -46,3 +47,62 @@ export default Vue.extend({
   }
 });
 </script>
+
+<style scoped>
+#topbar{
+  height: 100px;
+  font-size: 40px;
+  text-shadow: 0px 0px 8px black;
+  font-family: 'Castoro', serif;
+  padding: 20px 20px 20px 20px;
+  color: white;
+}
+
+.decrypt{
+  background-image: url("../assets/christmas.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input{
+  height: 80px;
+  width: 500px;
+  border-radius: 20px;
+  border: 0px;
+  margin: 20px 20px 20px 20px;
+  padding: 15px 15px 15px 15px;
+  font-size: 30px;
+  text-align: center;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.486);
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  margin-top: 100px;
+  font-family: 'Castoro', serif;
+  font-size: 30px;
+  color: white;
+  width: 200px;
+  height: 80px;
+  border-radius: 10px;
+  border: 0px;
+  outline: 0px;
+  background: rgb(201, 0, 0);
+  box-shadow: 0px 10px 0px rgb(145, 0, 0);
+  font-style: italic;
+}
+
+.yourPerson{
+  font-size: 80px;
+  text-shadow: 0px 0px 8px black;
+  font-family: 'Castoro', serif;
+  padding: 20px 20px 20px 20px;
+  color: white;
+}
+</style>
