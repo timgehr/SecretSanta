@@ -16,8 +16,7 @@ export default new Vuex.Store({
       }
       state.assignments[state.names.length-1] = state.names[0]
 
-      state.assignments = shuffleArray(state.assignments)
-      state.names = shuffleArray(state.names)
+      state.assignments, state.names = shuffleTwoArrays(state.assignments, state.names)
     }
   },
   actions: {
@@ -34,4 +33,19 @@ function shuffleArray(array) {
       array[j] = temp;
   }
   return array
+}
+
+function shuffleTwoArrays(array1, array2) {
+  for (var i = array1.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp1 = array1[i];
+      array1[i] = array1[j];
+      array1[j] = temp1;
+
+      
+      var temp2 = array2[i];
+      array2[i] = array2[j];
+      array2[j] = temp2;
+  }
+  return array1, array2
 }

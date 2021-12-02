@@ -49,6 +49,14 @@ export default Vue.extend({
       navigator.clipboard.writeText(toBeCopied)
     }
   },
+  mounted() {
+    for(var i = 0; i < this.$store.state.assignments.length; i++){
+      if (this.$store.state.assignments[i] === this.$store.state.names[i]){
+        document.getElementById('app').style.backgroundColor = "rgb(95, 0, 0)";
+        alert('tiddy')
+      }
+    }
+  }
 });
 </script>
 
@@ -58,18 +66,17 @@ export default Vue.extend({
   flex-direction: row;
 }
 
-
 .namesListItem {
   color: white;
   padding-top: 20px;
   padding-right: 20px;
   font-size: 30px;
-  height: 40px; 
+  height: 40px;
   text-align: justify;
 }
 
 .generated {
-  background-color: rgb(0, 95, 43);
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
