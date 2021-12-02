@@ -16,6 +16,8 @@ export default new Vuex.Store({
       }
       state.assignments[state.names.length-1] = state.names[0]
 
+      state.assignments = shuffleArray(state.assignments)
+      state.names = shuffleArray(state.names)
     }
   },
   actions: {

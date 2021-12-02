@@ -15,10 +15,11 @@
       <div class="listColumn">
         <li
           class="namesListItem"
+          v-on:click="copyText(assignment)"
           v-for="assignment in this.$store.state.assignments"
           :key="assignment"
         >
-          https://encryptedsanta.netlify.app/#/decrypt/{{ encryptName(assignment) }}
+          🎁
         </li>
       </div>
     </ul>
@@ -40,9 +41,13 @@ export default Vue.extend({
   methods: {
     encryptName(name) {
       return btoa(
-        CryptoJS.AES.encrypt(name, "2021").toString(CryptoJS.enc.Utf8)
+        CryptoJS.AES.encrypt(name, "2021").toString()
       );
     },
+    copyText(assignment) {
+      var toBeCopied = ("Your Secret Santa assignment awaits 🎁🎅🏼🎄: https://encryptedsanta.netlify.app/#/decrypt/" + this.encryptName(assignment))
+      navigator.clipboard.writeText(toBeCopied)
+    }
   },
 });
 </script>
@@ -51,7 +56,16 @@ export default Vue.extend({
 .namesList {
   display: flex;
   flex-direction: row;
-  width: 70%;
+}
+
+
+.namesListItem {
+  color: white;
+  padding-top: 20px;
+  padding-right: 20px;
+  font-size: 30px;
+  height: 40px; 
+  text-align: justify;
 }
 
 .generated {
