@@ -51,6 +51,7 @@ export default Vue.extend({
 .namesList {
   display: flex;
   flex-direction: row;
+  width: 70%;
 }
 
 .generated {
