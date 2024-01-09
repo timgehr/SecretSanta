@@ -1,10 +1,10 @@
 <template>
   <div class="generated">
     <div id="topbar">Assignments:</div>
-    <ul class="namesList">
+    <ul class="names-list">
       <div class="listColumn">
         <li
-          class="namesListItem"
+          class="names-list-item"
           v-for="name in this.$store.state.names"
           :key="name"
         >
@@ -14,7 +14,7 @@
 
       <div class="listColumn">
         <li
-          class="namesListItem"
+          class="names-list-item"
           v-on:click="copyText(assignment)"
           v-for="assignment in this.$store.state.assignments"
           :key="assignment"
@@ -31,7 +31,7 @@ import Vue from "vue";
 const CryptoJS = require("crypto-js");
 
 export default Vue.extend({
-  name: "Generated",
+  name: "generated",
   data() {
     return {
       res: "",
@@ -61,13 +61,12 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.namesList {
+.names-list {
   display: flex;
   flex-direction: row;
 }
 
-.namesListItem {
-  color: white;
+.names-list-item {
   padding-top: 20px;
   padding-right: 20px;
   font-size: 30px;

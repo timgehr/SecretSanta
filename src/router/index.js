@@ -25,7 +25,7 @@ const routes = [
   },
   {
     path: '/generated',
-    name: 'Generated',
+    name: 'generated',
     component: Generated
   }
 ]
